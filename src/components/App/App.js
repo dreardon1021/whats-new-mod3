@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import local from '../../data/local';
+import NewsContainer from '../NewsContainer/NewsContainer.js'
 import './App.css';
 
 class App extends Component {
@@ -13,7 +14,7 @@ class App extends Component {
   render () {
     return (
       <div className="app">
-        YOUR CODE GOES HERE!
+        <NewsContainer />
       </div>
     );
   }

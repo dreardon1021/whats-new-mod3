@@ -28,13 +28,6 @@ const local = [
     url: 'https://www.thedenverchannel.com/news/local-news/mural-outside-school-pays-tribute-to-denver-boy-after-tragic-death'
   },
   {
-    id: 5,
-    headline: 'Motorcyclist killed in crash near Capitol Hill in Denver',
-    img: 'https://localtvkdvr.files.wordpress.com/2019/09/fatal-motorcycle.jpeg?quality=85&strip=all&w=800&h=450&crop=1',
-    description: 'A motorcyclist was killed in a crash near East 17th Avenue and Park Avenue in Denver early Friday morning.',
-    url: 'https://kdvr.com/2019/09/27/motorcyclist-killed-in-crash-near-capitol-hill-in-denver/'
-  },
-  {
     id: 6,
     headline: 'The owner of Los Chingones is planning a food hall, beer garden and brewery in Denver Tech Center',
     img: 'https://www.denverpost.com/wp-content/uploads/2019/09/CD10TROYGUARD_AC33486x.jpg?w=781',
