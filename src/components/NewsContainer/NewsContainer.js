@@ -10,8 +10,10 @@ const NewsContainer = () => {
     {local.map(article => {
         return <NewsArticle
         headline={article.headline}
+        description={article.description}
         img={article.img}
         id={article.id}
+        url={article.url}
         key={article.id}
         />
       })}
