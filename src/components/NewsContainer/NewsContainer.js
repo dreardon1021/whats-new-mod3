@@ -6,7 +6,6 @@ import './NewsContainer.css'
 const NewsContainer = (props) => {
     return (
     <section className="news-container">
-    {console.log(props.articles)}
     {props.articles.map(category => {
       return category.map(article => {
         return <NewsArticle

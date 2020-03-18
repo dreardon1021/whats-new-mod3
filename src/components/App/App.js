@@ -21,7 +21,17 @@ class App extends Component {
   }
 
   updateState = (event) => {
-    this.setState({news: [[event.target.id]]})
+    if(event.target.id === 'local') {
+      this.setState({news: [local]})
+    } else if (event.target.id === 'entertainment') {
+      this.setState({news: [entertainment]})
+    } else if (event.target.id === 'health') {
+      this.setState({news: [health]})
+    } else if (event.target.id === 'science') {
+      this.setState({news: [science]})
+    } else if (event.target.id === 'technology') {
+      this.setState({news: [technology]})
+    }
   }
 
   render () {
