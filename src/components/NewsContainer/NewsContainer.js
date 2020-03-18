@@ -1,13 +1,14 @@
 import React from 'react';
 import NewsArticle from  '../NewsArticle/NewsArticle.js'
-import local from '../../data/local.js'
 import './NewsContainer.css'
 
 // NEWSCONTAINER COMPONENT CODE GOES HERE
-const NewsContainer = () => {
+const NewsContainer = (props) => {
     return (
     <section className="news-container">
-    {local.map(article => {
+    {console.log(props.articles)}
+    {props.articles.map(category => {
+      return category.map(article => {
         return <NewsArticle
         headline={article.headline}
         description={article.description}
@@ -16,6 +17,7 @@ const NewsContainer = () => {
         url={article.url}
         key={article.id}
         />
+        })
       })}
     </section>
   );
