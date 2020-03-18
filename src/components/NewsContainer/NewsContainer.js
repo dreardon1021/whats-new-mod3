@@ -7,16 +7,14 @@ const NewsContainer = (props) => {
     return (
     <section className="news-container">
     {props.articles.map(category => {
-      return category.map(article => {
         return <NewsArticle
-        headline={article.headline}
-        description={article.description}
-        img={article.img}
-        id={article.id}
-        url={article.url}
-        key={article.id}
+        headline={category.headline}
+        description={category.description}
+        img={category.img}
+        id={category.id}
+        url={category.url}
+        key={category.id}
         />
-        })
       })}
     </section>
   );
