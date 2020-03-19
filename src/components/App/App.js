@@ -16,7 +16,8 @@ const INITIAL_STATE = {
     entertainment: entertainment,
     health: health,
     science: science,
-    technology: technology
+    technology: technology,
+    category: local
   }
 }
 
@@ -29,7 +30,8 @@ class App extends Component {
         entertainment: entertainment,
         health: health,
         science: science,
-        technology: technology
+        technology: technology,
+        category: local
       }
     }
   }
@@ -38,13 +40,25 @@ class App extends Component {
     this.setState({news: {category: INITIAL_STATE.news[event.target.id]}})
   }
 
+  filterSearch = (searchValue) => {
+    let prevState = this.state
+    let foundArticles = this.state.news.category.filter(article => {
+      return article.headline.includes(searchValue)
+    })
+    this.setState({news: {category: foundArticles}})
+    if(searchValue === '') {
+      this.setState({news: {category: prevState}})
+    }
+  }
+
+
   render () {
     return (
       <div className="app">
-        <SearchForm />
+        <SearchForm filterSearch={this.filterSearch} />
         <main>
-          <Menu updateState={this.updateState}/>
-          <NewsContainer articles={this.state.news.local || this.state.news.category}/>
+          <Menu updateState={this.updateState} />
+          <NewsContainer articles={this.state.news.category}/>
         </main>
       </div>
     );

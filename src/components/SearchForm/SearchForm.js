@@ -3,7 +3,7 @@ import './SearchForm.css';
 
 
 class SearchForm extends Component {
-  constructor() {
+  constructor(props) {
     super();
     this.state = {
       searchValue: ''
@@ -12,6 +12,11 @@ class SearchForm extends Component {
 
   updateState = (event) => {
     this.setState({searchValue: event.target.value})
+    if(this.state.searchValue !== '') {
+      this.props.filterSearch(this.state.searchValue)
+    } else if(this.state.searchValue !== '') {
+      this.setState({searchValue: ''})
+    }
   }
 
   render() {
