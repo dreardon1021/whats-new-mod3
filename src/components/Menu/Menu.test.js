@@ -23,9 +23,9 @@ describe('Menu', () => {
   })
 
   it('should be able to call updateState Function', () => {
-    const mockUpdateSate = jest.fn();
+    const mockUpdateState = jest.fn();
 
-    const { getByText } = render(<Menu updateState={mockUpdateSate}/>)
+    const { getByText } = render(<Menu updateState={mockUpdateState}/>)
 
     fireEvent.click(getByText("Local News"));
     fireEvent.click(getByText("Entertainment"));
@@ -34,7 +34,7 @@ describe('Menu', () => {
     fireEvent.click(getByText("Technology"));
 
 
-    expect(mockUpdateSate).toHaveBeenCalledTimes(5)
+    expect(mockUpdateState).toHaveBeenCalledTimes(5)
 
   })
 })

@@ -24,8 +24,8 @@ describe('NewsArticle', () => {
   it('renders an image alt text that we expect', () => {
     const { getByAltText } = render(<NewsArticle />)
 
-    const articleImage = getByAltText("article")
+    const articleImage = getByAltText("article");
 
-    expect(articleImage).toBeInTheDocument()
+    expect(articleImage).toBeInTheDocument();
   })
 })

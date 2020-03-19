@@ -1,5 +1,6 @@
 .news-container {
   width: 80%;
+  min-width: 161vh;
   height: fit-content;
   min-height: 100vh;
   background-color: rgb(197, 197, 197);

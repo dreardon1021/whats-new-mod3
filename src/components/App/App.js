@@ -21,6 +21,12 @@ const INITIAL_STATE = {
   }
 }
 
+let CURRENT_CATEGORY = {
+  news: {
+    category: local
+  }
+}
+
 class App extends Component {
   constructor() {
     super();
@@ -38,17 +44,17 @@ class App extends Component {
 
   updateState = (event) => {
     this.setState({news: {category: INITIAL_STATE.news[event.target.id]}})
+    CURRENT_CATEGORY = {news: {category: INITIAL_STATE.news[event.target.id]}}
   }
 
   filterSearch = (searchValue) => {
-    let prevState = this.state
+    this.setState(CURRENT_CATEGORY)
+    let lowerSearchValue = searchValue.toLowerCase()
     let foundArticles = this.state.news.category.filter(article => {
-      return article.headline.includes(searchValue)
+      let lowerHeadline = article.headline.toLowerCase()
+      return lowerHeadline.includes(lowerSearchValue)
     })
     this.setState({news: {category: foundArticles}})
-    if(searchValue === '') {
-      this.setState({news: {category: prevState}})
-    }
   }
 
 

@@ -10,13 +10,13 @@ class SearchForm extends Component {
     }
   }
 
-  updateState = (event) => {
+  updateFormState = (event) => {
     this.setState({searchValue: event.target.value})
-    if(this.state.searchValue !== '') {
-      this.props.filterSearch(this.state.searchValue)
-    } else if(this.state.searchValue !== '') {
-      this.setState({searchValue: ''})
-    }
+  }
+
+  getArticles = (event) => {
+    event.preventDefault();
+    this.props.filterSearch(this.state.searchValue)
   }
 
   render() {
@@ -27,8 +27,10 @@ class SearchForm extends Component {
           <input
             name="search"
             placeholder="Enter an Article Name"
-            onChange={this.updateState}
-            value={this.state.searchValue} />
+            value={this.state.searchValue}
+            onChange={this.updateFormState}
+          />
+          <button onClick={this.getArticles} className="search-button">Submit</button>
         </form>
       </nav>
     )
