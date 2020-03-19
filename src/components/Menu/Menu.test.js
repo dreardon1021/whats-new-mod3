@@ -27,7 +27,14 @@ describe('Menu', () => {
 
     const { getByText } = render(<Menu updateState={mockUpdateSate}/>)
 
-    fireEvent
+    fireEvent.click(getByText("Local News"));
+    fireEvent.click(getByText("Entertainment"));
+    fireEvent.click(getByText("Health"));
+    fireEvent.click(getByText("Science"));
+    fireEvent.click(getByText("Technology"));
+
+
+    expect(mockUpdateSate).toHaveBeenCalledTimes(5)
 
   })
 })
