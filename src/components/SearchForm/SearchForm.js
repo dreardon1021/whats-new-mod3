@@ -10,8 +10,8 @@ class SearchForm extends Component {
     }
   }
 
-  updateState = () => {
-    this.setState({searchValue: [event.target.value]})
+  updateState = (event) => {
+    this.setState({searchValue: event.target.value})
   }
 
   render() {
@@ -21,10 +21,11 @@ class SearchForm extends Component {
         <form>
           <input
             name="search"
+            placeholder="Enter an Article Name"
             onChange={this.updateState}
             value={this.state.searchValue} />
+          <button className="search-button">Search</button>
         </form>
-        <button>Search</button>
       </nav>
     )
   }

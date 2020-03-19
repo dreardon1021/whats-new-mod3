@@ -7,8 +7,15 @@
 
 .app {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background: #141527;
   height: fit-content;
   text-align: center;
   width: 100%;
+}
+
+main {
+  display:flex;
 }

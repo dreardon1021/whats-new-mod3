@@ -4,6 +4,7 @@ import entertainment from '../../data/entertainment.js';
 import health from '../../data/health.js';
 import science from '../../data/science.js';
 import technology from '../../data/technology.js';
+import SearchForm from '../SearchForm/SearchForm.js';
 import Menu from '../Menu/Menu.js';
 import NewsContainer from '../NewsContainer/NewsContainer.js';
 
@@ -40,9 +41,11 @@ class App extends Component {
   render () {
     return (
       <div className="app">
-        <Form />
-        <Menu updateState={this.updateState}/>
-        <NewsContainer articles={this.state.news.local || this.state.news.category}/>
+        <SearchForm />
+        <main>
+          <Menu updateState={this.updateState}/>
+          <NewsContainer articles={this.state.news.local || this.state.news.category}/>
+        </main>
       </div>
     );
   }
