@@ -45,12 +45,12 @@ class App extends Component {
   updateState = (event) => {
     this.setState({news: {category: INITIAL_STATE.news[event.target.id]}})
     CURRENT_CATEGORY = {news: {category: INITIAL_STATE.news[event.target.id]}}
+    console.log(CURRENT_CATEGORY)
   }
 
   filterSearch = (searchValue) => {
-    this.setState(CURRENT_CATEGORY)
     let lowerSearchValue = searchValue.toLowerCase()
-    let foundArticles = this.state.news.category.filter(article => {
+    let foundArticles = CURRENT_CATEGORY.news.category.filter(article => {
       let lowerHeadline = article.headline.toLowerCase()
       return lowerHeadline.includes(lowerSearchValue)
     })
