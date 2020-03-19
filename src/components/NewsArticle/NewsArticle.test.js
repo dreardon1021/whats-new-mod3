@@ -25,7 +25,7 @@ describe('NewsArticle', () => {
     const { getByAltText } = render(<NewsArticle />)
 
     const articleImage = getByAltText("article")
-    
+
     expect(articleImage).toBeInTheDocument()
   })
 })

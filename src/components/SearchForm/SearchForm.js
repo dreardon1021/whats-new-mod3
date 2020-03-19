@@ -29,7 +29,6 @@ class SearchForm extends Component {
             placeholder="Enter an Article Name"
             onChange={this.updateState}
             value={this.state.searchValue} />
-          <button className="search-button">Search</button>
         </form>
       </nav>
     )

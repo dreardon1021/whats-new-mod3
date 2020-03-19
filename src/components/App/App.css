@@ -12,6 +12,7 @@
   align-items: center;
   background: #141527;
   height: fit-content;
+  min-height: 100vh;
   text-align: center;
   width: 100%;
 }
